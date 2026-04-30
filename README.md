@@ -15,6 +15,17 @@ This project implements a parallel decision tree classifier in C using the Messa
 
 The implementation focuses on demonstrating how collective MPI communication can be used to parallelize data distribution, split evaluation, class-count aggregation, and final accuracy calculation. The main source file is `src/main.c`, and the executable `dt_mpi.exe` is generated after compilation.
 
+## How It Works
+
+1. Rank 0 reads the dataset
+2. Dataset is distributed using MPI_Scatterv
+3. Each process computes local statistics
+4. MPI_Allreduce aggregates global statistics
+5. Best split is selected using Gini impurity
+6. Depth-2 tree is constructed
+7. Predictions are made locally
+8. MPI_Reduce computes total accuracy
+
 ## Requirements
 
 - Windows operating system
@@ -124,6 +135,15 @@ The program prints dataset information, the selected decision tree rules, traini
 
 `MPI_Reduce` is used to aggregate local accuracy counts into a single global count on rank 0. Each process counts the number of correctly classified samples in its local partition, and rank 0 receives the total number of correct predictions.
 
+## Performance Results
+
+| Processes | Time (s) | Speedup | Efficiency |
+|-----------|----------|---------|------------|
+| 1         | 0.005365 | 1.00    | 1.00       |
+| 2         | 0.003025 | 1.77    | 0.89       |
+| 4         | 0.001653 | 3.25    | 0.81       |
+| 8         | 0.001177 | 4.56    | 0.57       |
+
 ## Performance Metrics
 
 The program reports execution time using `MPI_Wtime`. Timing begins after the dataset has been distributed and ends after the accuracy calculation has been reduced to rank 0.
@@ -157,6 +177,12 @@ Efficiency = Speedup / p
 ```
 
 An efficiency value close to 1 indicates strong process utilization. Lower efficiency may result from communication overhead, load imbalance, synchronization costs, or insufficient dataset size.
+
+## Limitations
+
+- Only a depth-2 tree is implemented
+- Limited number of candidate thresholds are evaluated
+- Performance depends on dataset size and communication overhead
 
 ### Performance Graphs
 
