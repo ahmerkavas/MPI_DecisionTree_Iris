@@ -23,21 +23,21 @@ The Microsoft MPI SDK must provide the MPI header files and libraries, typically
 ## Project Structure
 
 ```text
-Homework3_DecisionTree_MPI/
+MPI_DecisionTree/
 +-- dataset/
 |   +-- iris.csv
 |   +-- iris_large.csv
-|   +-- winequality.names
++-- images/
+|   +-- speedup_graph.png
+|   +-- efficiency_graph.png
 +-- src/
 |   +-- main.c
-|   +-- generate_dataset.py
-+-- report/
-+-- dt_mpi.exe
-+-- main.obj
++-- generate_dataset.py
++-- .gitignore
 +-- README.md
 ```
 
-The file `src/main.c` contains the MPI decision tree implementation. The file `src/generate_dataset.py` expands the original Iris dataset into a larger dataset for performance experiments. The executable `dt_mpi.exe` is the compiled Windows binary.
+The file `src/main.c` contains the MPI decision tree implementation. The file `generate_dataset.py` expands the original Iris dataset into a larger dataset for performance experiments. The executable `dt_mpi.exe` is produced during compilation and is not stored in the repository.
 
 ## Dataset Explanation
 
@@ -151,14 +151,24 @@ Efficiency = Speedup / p
 
 An efficiency value close to 1 indicates strong process utilization. Lower efficiency may result from communication overhead, load imbalance, synchronization costs, or insufficient dataset size.
 
+### Performance Graphs
+
+Speedup graph:
+
+![Speedup graph](images/speedup_graph.png)
+
+Efficiency graph:
+
+![Efficiency graph](images/efficiency_graph.png)
+
 ## Dataset Expansion
 
-The file `src/generate_dataset.py` creates `dataset/iris_large.csv` by repeatedly copying the rows from `dataset/iris.csv`. This increases the number of samples and makes parallel performance measurements more meaningful.
+The file `generate_dataset.py` creates `dataset/iris_large.csv` by repeatedly copying the rows from `dataset/iris.csv`. This increases the number of samples and makes parallel performance measurements more meaningful.
 
 Run the script from the project root directory:
 
 ```bat
-python src\generate_dataset.py
+python generate_dataset.py
 ```
 
 The script reads:
@@ -173,4 +183,4 @@ and writes:
 dataset/iris_large.csv
 ```
 
-The expansion factor can be changed by modifying the `multiplier` variable in `src/generate_dataset.py`.
+The expansion factor can be changed by modifying the `multiplier` variable in `generate_dataset.py`.
