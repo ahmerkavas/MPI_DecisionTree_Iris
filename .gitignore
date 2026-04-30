@@ -1,7 +1,21 @@
-# Compiled executables and object files
-*.exe
-*.obj
+# Prerequisites and dependency files
+*.d
+
+# Compiled object files
+*.slo
+*.lo
 *.o
+*.obj
+
+# Precompiled headers
+*.gch
+*.pch
+
+# Executables and runtime outputs
+*.exe
+*.out
+*.app
+*.err
 
 # MSVC debug and linker outputs
 *.pdb
@@ -11,14 +25,33 @@
 *.exp
 *.map
 
+# Dynamic and static libraries
+*.so
+*.so.*
+*.dylib
+*.dll
+*.lai
+*.la
+*.a
+
 # Build directories
 build/
+Build/
+build-*/
 bin/
 obj/
 x64/
 x86/
 Debug/
 Release/
+
+# CMake generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+install_manifest.txt
+compile_commands.json
 
 # Visual Studio user files
 .vs/
@@ -27,10 +60,19 @@ Release/
 *.VC.db
 *.VC.opendb
 
-# Runtime and log outputs
+# Temporary files and logs
+*.tmp
 *.log
-*.out
-*.err
+*.bak
+*.swp
+
+# vcpkg
+vcpkg_installed/
+
+# Debug information and test cache
+*.dwo
+Testing/
+.cache/
 
 # Python cache files for dataset generation scripts
 __pycache__/
