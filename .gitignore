@@ -1,0 +1,37 @@
+# Compiled executables and object files
+*.exe
+*.obj
+*.o
+
+# MSVC debug and linker outputs
+*.pdb
+*.ilk
+*.idb
+*.lib
+*.exp
+*.map
+
+# Build directories
+build/
+bin/
+obj/
+x64/
+x86/
+Debug/
+Release/
+
+# Visual Studio user files
+.vs/
+*.user
+*.suo
+*.VC.db
+*.VC.opendb
+
+# Runtime and log outputs
+*.log
+*.out
+*.err
+
+# Python cache files for dataset generation scripts
+__pycache__/
+*.pyc
