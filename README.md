@@ -1,5 +1,12 @@
 # MPI Decision Tree Classifier
 
+![Language](https://img.shields.io/badge/language-C-blue)
+![Parallelism](https://img.shields.io/badge/parallelism-MPI-orange)
+![Processes](https://img.shields.io/badge/processes-1%2F2%2F4%2F8-blue)
+![Platform](https://img.shields.io/badge/platform-Windows-lightgrey)
+![Compiler](https://img.shields.io/badge/compiler-MSVC-blueviolet)
+![License](https://img.shields.io/badge/license-MIT-green)
+
 Author: Ahmer Kavas
 
 ## Project Overview
