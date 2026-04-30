@@ -6,7 +6,7 @@ Author: Ahmer Kavas
 
 This project implements a parallel decision tree classifier in C using the Message Passing Interface (MPI). The program is designed for execution on Windows with Microsoft MPI. It reads an Iris dataset, distributes the dataset across multiple MPI processes, evaluates candidate decision tree splits in parallel, and reports the resulting training accuracy and execution time.
 
-The implementation focuses on demonstrating how collective MPI communication can be used to parallelize data distribution, split evaluation, class-count aggregation, and final accuracy calculation. The main source file is `src/main.c`, and the compiled executable is `dt_mpi.exe`.
+The implementation focuses on demonstrating how collective MPI communication can be used to parallelize data distribution, split evaluation, class-count aggregation, and final accuracy calculation. The main source file is `src/main.c`, and the executable `dt_mpi.exe` is generated after compilation.
 
 ## Requirements
 
