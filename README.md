@@ -184,3 +184,7 @@ dataset/iris_large.csv
 ```
 
 The expansion factor can be changed by modifying the `multiplier` variable in `generate_dataset.py`.
+
+## Results Summary
+
+Using the expanded Iris dataset, the depth-2 MPI Decision Tree achieved a training accuracy of approximately 95.31%. The execution time decreased from 0.005365 seconds with 1 process to 0.001177 seconds with 8 processes, demonstrating effective parallel speedup.
