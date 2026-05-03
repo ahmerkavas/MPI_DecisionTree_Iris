@@ -7,7 +7,7 @@
 ![Compiler](https://img.shields.io/badge/compiler-MSVC-blueviolet)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-Author: Ahmer Kavas
+Author: Ahmer Kavas and Nartan Kaplan
 
 ## Project Overview
 
