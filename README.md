@@ -7,8 +7,6 @@
 ![Compiler](https://img.shields.io/badge/compiler-MSVC-blueviolet)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-Author: Ahmer Kavas and Nartan Kaplan
-
 ## Project Overview
 
 This project implements a parallel decision tree classifier in C using the Message Passing Interface (MPI). The program is designed for execution on Windows with Microsoft MPI. It reads an Iris dataset, distributes the dataset across multiple MPI processes, evaluates candidate decision tree splits in parallel, and reports the resulting training accuracy and execution time.
